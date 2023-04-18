@@ -142,6 +142,7 @@ label{
 .custom-counter li{
     display: flex;
     flex-wrap: wrap;
+    margin: 1rem;
 }
 .custom-counter li::before {
     counter-increment: item;
