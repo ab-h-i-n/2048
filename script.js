@@ -5,7 +5,7 @@ var touchstartY = 0;
 var touchendX = 0;
 var touchendY = 0;
 
-var gesuredZone = document.getElementById('board');
+var gesuredZone = document.getElementById('body');
 
 gesuredZone.addEventListener('touchstart', function(event) {
     touchstartX = event.screenX;

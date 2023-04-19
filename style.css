@@ -20,8 +20,8 @@
     --padding:.5rem;
     --board-size:300px;
     --board-margintop:4rem;
-    --tile-border:3px;
-    --tile-size:calc(var(--board-size)/4 - var(--tile-border));
+    --tile-border:5px;
+    --tile-size:calc(var(--board-size)/4 - 3px);
 
 }
   body{
