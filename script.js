@@ -50,6 +50,7 @@ function updateTile (tile , num){
     }
     if(checkWin()){
         alert("You Win!");
+        window.location.reload();
       }
 }
 
@@ -70,6 +71,12 @@ document.addEventListener("keyup",(e)=>{
         slideDown();
         setTwo();
     }
+    
+    if (!checkMovesLeft()) {
+        alert("Game Over!");
+        window.location.reload();
+    }
+
 })
 function slideDown(){
     for(let i=0;i<columns;i++)
@@ -231,14 +238,50 @@ if (Math.abs(deltaX) > Math.abs(deltaY)) {
 if (swipeDirection === "right") {
     slideRight();
     setTwo();
+    if (!checkMovesLeft()) {
+        alert("Game Over!");
+        window.location.reload();
+    }
 } else if (swipeDirection === "left") {
     slideLeft();
     setTwo();
+    if (!checkMovesLeft()) {
+        alert("Game Over!");
+        window.location.reload();
+    }
 } else if (swipeDirection === "down") {
     slideDown();
     setTwo();
+    if (!checkMovesLeft()) {
+        alert("Game Over!");
+        window.location.reload();
+    }
 } else if (swipeDirection === "up") {
     slideUp();
     setTwo();
+    if (!checkMovesLeft()) {
+        alert("Game Over!");
+        window.location.reload();
+    }
 }
+}
+
+function checkMovesLeft() {
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < columns; j++) {
+            let currentTile = board[i][j];
+            if (currentTile == 0) {
+                return true; // There is an empty tile, so there is a move left
+            } else {
+                // Check if the neighboring tiles have the same value
+                if ((i > 0 && board[i-1][j] == currentTile) ||
+                    (i < rows-1 && board[i+1][j] == currentTile) ||
+                    (j > 0 && board[i][j-1] == currentTile) ||
+                    (j < columns-1 && board[i][j+1] == currentTile)) {
+                    return true; // There is a neighboring tile with the same value, so there is a move left
+                }
+            }
+        }
+    }
+    return false; // There are no moves left
 }
