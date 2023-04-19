@@ -196,3 +196,61 @@ center{
 .x512{background-color: #797de0;font-size: 35px;}
 .x1024{background-color: #e079d8;font-size: 25px;}
 .x2048{background-color: #e05151;font-size: 25px;}
+
+@media  screen and (min-width:600px) {
+
+    :root{
+        --board-size:380px;
+    }
+    body{
+        padding: 3rem;
+    }
+    
+}
+@media  screen and (min-width:900px) {
+
+    :root{
+        --board-size:400px;
+    }
+    body{
+        padding: 2rem;
+    }
+    .top h1{
+        font-size: 3rem;
+    }
+    .score{
+        height: 100px;
+    }
+    #score{
+        font-size: 2rem;
+    }
+}
+@media  screen and (min-width:900px) {
+    :root{
+        --board-size:700px;
+    }
+    .top,
+    .bottom{
+        height: 50px;
+    }
+    .score{
+        position: absolute;
+        top:20px;
+        right: 20px;
+    }
+    .bottom button{
+        position: absolute;
+        top:130px;
+        right:20px;
+        height: 50px;
+        width: 100px;
+    }
+    
+    #board{
+        position: absolute;
+        top:130px
+    }
+    footer{
+        bottom: -25px;
+    }
+}
