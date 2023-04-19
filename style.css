@@ -109,9 +109,6 @@ footer{
 }
 
 /* about */
-.about-body{
-    overflow: auto;
-}
 .description{
     color: var(--text-3-color);
     font-size: 1.5rem;
