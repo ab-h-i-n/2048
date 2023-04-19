@@ -20,7 +20,8 @@
     --padding:.5rem;
     --board-size:300px;
     --board-margintop:4rem;
-    --tile-size:calc(var(--board-size)/4 - 5px);
+    --tile-border:3px;
+    --tile-size:calc(var(--board-size)/4 - var(--tile-border));
 
 }
   body{
@@ -100,6 +101,9 @@
     background-color: var(--board-color);
     width: min(var(--board-size));
     height: var(--board-size);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 footer{
     width: auto;
@@ -174,7 +178,7 @@ center{
 .tile{
     width: var(--tile-size);
     height: var(--tile-size);
-    border: 5px solid var(--board-color);
+    border: var(--tile-border) solid var(--board-border-color);
     font-weight: bold;
     display: flex;
     justify-content: center;
